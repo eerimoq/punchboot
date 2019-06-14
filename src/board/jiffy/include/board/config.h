@@ -15,15 +15,9 @@
 
 #define EHCI_PHY_BASE 0x02184000
 
-#define BOARD_BOOT_ARGS  "console=ttymxc1,115200 " \
-                         "quiet " \
-                         "root=PARTUUID=%s " \
-                         "rw rootfstype=ext4 gpt rootwait"
+#define BOARD_BOOT_ARGS  "console=ttymxc1,115200 "
 
 
-#define BOARD_BOOT_ARGS_VERBOSE  "console=ttymxc1,115200 " \
-                         "earlyprintk " \
-                         "root=PARTUUID=%s " \
-                         "rw rootfstype=ext4 gpt rootwait"
+#define BOARD_BOOT_ARGS_VERBOSE  "console=ttymxc1,115200 "
 
 #endif
