@@ -999,4 +999,3 @@ uint32_t recovery_initialize(void)
 
     return PB_OK;
 }
-
