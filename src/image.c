@@ -24,7 +24,7 @@ extern char _code_start, _code_end,
             _zero_region_start, _zero_region_end,
             _stack_start, _stack_end, _big_buffer_start, _big_buffer_end;
 
-#define IMAGE_BLK_CHUNK 8192
+#define IMAGE_BLK_CHUNK 768
 
 static __no_bss __a4k uint8_t signature_data[1024];
 extern const struct bpak_keystore keystore_pb;
