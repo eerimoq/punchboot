@@ -138,7 +138,7 @@ uint32_t gpt_init_tbl(uint64_t first_lba, uint64_t last_lba)
     hdr->rev = 0x00010000;
     hdr->hdr_sz = sizeof(struct gpt_header) - GPT_HEADER_RSZ;
     hdr->current_lba = first_lba;
-    hdr->no_of_parts = 128;
+    hdr->no_of_parts = 32;
 
     hdr->first_lba = (hdr->current_lba + 1
             + (hdr->no_of_parts*sizeof(struct gpt_part_hdr)) / 512);

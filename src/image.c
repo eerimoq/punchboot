@@ -33,7 +33,6 @@ uint32_t pb_image_check_header(struct bpak_header *h)
 {
     uint32_t err = PB_OK;
 
-
     err = bpak_valid_header(h);
 
     if (err != BPAK_OK)

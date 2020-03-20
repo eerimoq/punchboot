@@ -375,13 +375,13 @@ void plat_usb_wait_for_ep_completion(struct usb_device *dev, uint32_t ep)
     ehci_usb_wait_for_ep_completion(dev, ep);
 }
 
-
 uint32_t plat_early_init(void)
 {
     uint32_t reg;
     uint32_t err;
 
     board_early_init(&plat);
+
     /* Unmask wdog in SRC control reg */
     pb_write32(0, 0x020D8000);
     plat_wdog_init();
@@ -408,8 +408,7 @@ uint32_t plat_early_init(void)
 
 
     /* Wait for PLL to lock */
-    while (!(pb_read32(0x020C8000) & (1<<31)))
-        __asm__("nop");
+    while (!(pb_read32(0x020C8000) & (1<<31)));
 
     /* Select re-connect ARM PLL */
     pb_write32(reg & ~(1<<2), 0x020C400C);
@@ -472,4 +471,3 @@ uint32_t plat_early_init(void)
         LOG_ERR("WDOG kick failed");
     return PB_OK;
 }
-
