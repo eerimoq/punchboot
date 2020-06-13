@@ -24,6 +24,10 @@ else
 	TIMING_REPORT=0
 endif
 
+ifndef FORCE_RUN_RECOVERY
+	FORCE_RUN_RECOVERY=0
+endif
+
 CFLAGS   = -Wall -Wextra -Wunused-result -Os -std=c99
 CFLAGS  += -nostdlib -nostartfiles
 CFLAGS  += -ffunction-sections
@@ -35,6 +39,7 @@ CFLAGS  += -I include/pb/libc
 CFLAGS  += -DPB_VERSION=\"$(GIT_VERSION)\"
 CFLAGS  += -DLOGLEVEL=$(LOGLEVEL)
 CFLAGS  += -DTIMING_REPORT=$(TIMING_REPORT)
+CFLAGS  += -DFORCE_RUN_RECOVERY=$(FORCE_RUN_RECOVERY)
 CFLAGS  += -D__PB_BUILD
 CFLAGS  += -fno-common -fno-builtin
 CFLAGS  += -ffreestanding -fno-exceptions

@@ -67,6 +67,9 @@ void pb_main(void)
     if (config_init() != PB_OK)
         flag_run_recovery = true;
 
+    if (FORCE_RUN_RECOVERY)
+        flag_run_recovery = true;
+    
     if (flag_run_recovery)
         goto run_recovery;
 
