@@ -130,6 +130,8 @@ void pb_boot(struct bpak_header *h, uint32_t system_index, bool verbose)
 
     plat_wdog_kick();
 
+    /* printf("b"); */
+
     if (atf && dtb && linux)
     {
         LOG_DBG("ATF boot");

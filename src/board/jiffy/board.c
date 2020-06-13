@@ -64,7 +64,7 @@ uint32_t board_early_init(struct pb_platform_setup *plat)
     plat->usdhc0.base = 0x02190000;
     plat->usdhc0.clk_ident = 0x10E1;
     plat->usdhc0.clk = 0x0101;
-    plat->usdhc0.bus_mode = USDHC_BUS_DDR52;
+    plat->usdhc0.bus_mode = USDHC_BUS_HS200;
     plat->usdhc0.bus_width = USDHC_BUS_8BIT;
     plat->usdhc0.boot_bus_cond = 0;
 

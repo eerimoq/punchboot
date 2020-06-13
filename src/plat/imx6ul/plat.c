@@ -380,6 +380,10 @@ uint32_t plat_early_init(void)
     uint32_t reg;
     uint32_t err;
 
+    /* /\* GPIO1_IO00 low. *\/ */
+    /* pb_write32(0, 0x0209C000); */
+    /* pb_write32(1, 0x0209C004); */
+
     board_early_init(&plat);
 
     /* Unmask wdog in SRC control reg */
@@ -434,6 +438,8 @@ uint32_t plat_early_init(void)
     }
 
     imx_uart_init(&plat.uart0);
+
+    /* printf("e"); */
 
     plat.ocotp.base = 0x021BC000;
     plat.ocotp.words_per_bank = 8;
