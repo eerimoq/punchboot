@@ -28,7 +28,7 @@ C_FLAGS   = -std=c99 -D_POSIX_C_SOURCE=200809L -Wall -I include/
 C_FLAGS  += -DVERSION=\"$(GIT_VERSION)\"
 C_FLAGS  += $(shell pkg-config --cflags openssl libpkcs11-helper-1)
 C_FLAGS  += -MMD -MP
-C_FLAGS  +=  -Werror -pedantic -fPIC -g -DREMOVE_ENCRYPTION -m64
+C_FLAGS  += -pedantic -fPIC -g -DREMOVE_ENCRYPTION -m64
 C_FLAGS  += -I $(BUILD)/
 
 LIBS    = $(shell pkg-config --libs openssl libpkcs11-helper-1)
