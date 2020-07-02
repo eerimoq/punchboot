@@ -132,6 +132,10 @@ void pb_boot(struct bpak_header *h, uint32_t system_index, bool verbose)
 
     /* printf("b"); */
 
+    /* GPIO1_IO00 high. */
+    pb_write32(1, 0x0209C000);
+    /* pb_write32(1, 0x0209C004); */
+
     if (atf && dtb && linux)
     {
         LOG_DBG("ATF boot");

@@ -28,12 +28,12 @@ pb_vector_table:
 pb_entry:
     /* Disable interrupts */
         cpsid    if
-/*    ldr	r3, _apa */
-/* */
-/*    mov	r2, #1 */
-/*    mov	r4, #0 */
-/*    str	r4, [r3] */
-/*    str	r2, [r3, #4] */
+    ldr	r3, _apa 
+
+    mov	r2, #1 
+    mov	r4, #0 
+    str	r4, [r3] 
+    str	r2, [r3, #4] 
 
     /* Program vector table */
     ldr    r0, =pb_vector_table
@@ -66,8 +66,8 @@ _zeroing_done:
     bl pb_main
     b .
 
-/*_apa:    */
-/*    .word	0x0209c000 */
+_apa:   
+    .word	0x0209c000
 
 __zero_region_start:
     .word _zero_region_start

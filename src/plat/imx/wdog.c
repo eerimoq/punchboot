@@ -8,6 +8,7 @@
  *
  */
 
+#include <stdio.h>
 #include <pb.h>
 #include <io.h>
 #include <plat.h>
@@ -54,4 +55,30 @@ uint32_t imx_wdog_reset_now(void)
 
     while (true)
         __asm__("nop");
+}
+
+void imx_wdog_print_reason(void)
+{
+    const char *reason_p;
+
+    switch (pb_read16(_dev->base + WDOG_WRSR)) {
+
+    case 0x10:
+        reason_p = "Power On Reset";
+        break;
+
+    case 0x2:
+        reason_p = "Watchdog Timeout";
+        break;
+
+    case 0x1:
+        reason_p = "Software Reset";
+        break;
+
+    default:
+        reason_p = "Invalid";
+        break;
+    }
+
+    LOG_INFO("Watchdog reset status: %s", reason_p);
 }
